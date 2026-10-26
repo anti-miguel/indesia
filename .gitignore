@@ -1,0 +1,24 @@
+**/*.pdf
+**/*.xlxs
+**/*.csv
+**/*.xls
+**/*.ods
+**/*.parquet
+**/*.avro
+**/*.log
+**/*.csv.gz
+**/*.json.gz
+**/*.tar.gz
+**/*.zip
+**/*.test
+# Local configuration and generated files
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+*.pem
+*.key
+*.pfx
+*.p12

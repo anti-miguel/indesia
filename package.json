@@ -1,0 +1,49 @@
+{
+  "name": "pid-blueprint-analyzer",
+  "version": "2.1.0",
+  "description": "Enhanced AI-powered P&ID Blueprint Analyzer with Advanced Features",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
+    "test:security": "node --experimental-vm-modules --test tests/credential-boundary.test.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.10",
+    "postcss": "^8.4.47",
+    "svelte": "^4.2.19",
+    "svelte-check": "^4.0.5",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@xenova/transformers": "^2.17.2",
+    "date-fns": "^4.1.0",
+    "jszip": "^3.10.1",
+    "lucide-svelte": "^0.460.0",
+    "nanoid": "^5.0.8",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.8.69"
+  },
+  "keywords": [
+    "pid",
+    "blueprint",
+    "analyzer",
+    "ai",
+    "svelte",
+    "engineering",
+    "drawings",
+    "analysis",
+    "batch-processing",
+    "zip-support"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

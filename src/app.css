@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-base-100/20 backdrop-blur-sm border border-base-content/10;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .blueprint-viewer {
+    @apply bg-base-200 rounded-lg border border-base-content/20;
+    background-image: 
+      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .chat-message {
+    @apply p-4 rounded-lg mb-3 max-w-[80%] break-words;
+  }
+  
+  .chat-user {
+    @apply bg-primary text-primary-content ml-auto;
+  }
+  
+  .chat-ai {
+    @apply bg-base-200 text-base-content;
+  }
+  
+  .blueprint-snippet {
+    @apply bg-accent/10 border border-accent/30 rounded-lg p-2 my-2;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.base-300');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.primary');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED; /* primary-focus equivalent */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-primary {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(139, 92, 246, 0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-pulse-primary {
+  animation: pulse-primary 2s infinite;
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  position: relative;
+}
+
+.loading-dots div {
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8B5CF6; /* primary color */
+  animation: loading-dots-animation 1.2s linear infinite;
+}
+
+.loading-dots div:nth-child(1) { left: 8px; animation-delay: 0s; }
+.loading-dots div:nth-child(2) { left: 26px; animation-delay: 0.4s; }
+.loading-dots div:nth-child(3) { left: 44px; animation-delay: 0.8s; }
+
+@keyframes loading-dots-animation {
+  0% { transform: translateY(-50%) scale(0); }
+  50% { transform: translateY(-50%) scale(1); }
+  100% { transform: translateY(-50%) scale(0); }
+}
